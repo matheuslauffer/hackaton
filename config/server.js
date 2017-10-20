@@ -10,6 +10,31 @@ var bodyParser = require('body-parser');
 /* importar o módulo do express-validator */
 var expressValidator = require('express-validator');
 
+/*iniciar o módulo passport*/
+var passport = require('passport');
+
+/*Configurações do passport*/
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.use(new FacebookStrategy({
+    clientID: credentials.facebook_api_key,
+    clientSecret:credentials.facebook_api_secret ,
+    callbackURL: credentials.callback_url,
+    profileFields: ['id', 'displayName', 'photos', 'emails', 'gender']
+  },
+  function(accessToken, refreshToken, profile, done) {
+    process.nextTick(function () {
+      	return done(null, profile);
+    });
+  }
+));
+
 /* iniciar o objeto do express */
 var app = express();
 
