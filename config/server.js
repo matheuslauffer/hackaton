@@ -36,6 +36,30 @@ passport.use(new FacebookStrategy({
   }
 ));
 
+/*Rotas para login com facebook*/
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
+
+app.get('/auth/facebook/callback',
+	app.passport.authenticate('facebook', { successRedirect : '/', failureRedirect: '/login' }),
+	function(req, res) {
+		res.redirect('/');
+	});
+
+app.get('/logout', function(req, res){
+	req.logout();
+	res.redirect('/');
+});
+
+app.get('/login', function(req, res){
+	res.redirect('/');
+});
+
+function usuarioAutenticado(req, res, next) {
+	if (req.isAuthenticated())
+		return next();
+	res.redirect('/login')
+}
+
 /* iniciar o objeto do express */
 var app = express();
 
