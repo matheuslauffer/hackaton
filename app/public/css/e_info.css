@@ -1,27 +1,3 @@
-body{
-	/*background-color: red;*/
-}
-
-div.principal_css{
-	background-color: blue;
-}
-/*
-div.conteudo{
-	padding: 10px;
-}
-*/
-div.mapa_css{
-	background-color: green;
-}
-
-div.menu_css{
-	background-color: gray;
-}
-
-div.pedidos_css{
-	background-color: yellow;
-}
-
 img.home{
 	display: block;
 	margin: auto;

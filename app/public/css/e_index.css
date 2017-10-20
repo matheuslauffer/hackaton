@@ -3,7 +3,7 @@ body{
 }
 
 div.principal_css{
-	background-color: blue;
+	
 }
 /*
 div.conteudo{
@@ -11,7 +11,9 @@ div.conteudo{
 }
 */
 div.mapa_css{
-	background-color: green;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
 }
 
 div.menu_css{
@@ -25,6 +27,14 @@ div.pedidos_css{
 img.home{
 	display: block;
 	margin: auto;
+}
+
+div.xyz{
+	background-color: black;
+}
+
+div.faca_doacao{
+	background-color: yellow;
 }
 
 p.link_page{
@@ -46,4 +56,9 @@ span.centro{
 span.entre{
 	font-size: 20px;
 	color: yellow;
+}
+
+input{
+	position: relative;
+	margin-left: -5.5%;
 }
