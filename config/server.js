@@ -13,6 +13,7 @@ var expressValidator = require('express-validator');
 /*iniciar o módulo passport*/
 var passport = require('passport');
 
+var FacebookStrategy = require('passport-facebook').Strategy;
 /*Configurações do passport*/
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -23,10 +24,10 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: credentials.facebook_api_key,
-    clientSecret:credentials.facebook_api_secret ,
-    callbackURL: credentials.callback_url,
-    profileFields: ['id', 'displayName', 'photos', 'emails', 'gender']
+    clientID: 913090452086194,
+    clientSecret:"4b86ecc76dd475305eaf390f43564b80",
+    callbackURL: "/auth/facebook/callback",
+    profileFields: ['id', 'displayName', 'emails', 'gender'] //verificar os campos necessários
   },
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
@@ -51,6 +52,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 /* configurar o middleware express-validator */
 app.use(expressValidator());
 
+/*inicializar passport e session*/
+app.use(passport.initialize());
+app.use(passport.session());
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign()
 	.include('app/routes')
