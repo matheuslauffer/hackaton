@@ -37,7 +37,6 @@ passport.use(new FacebookStrategy({
 ));
 /* iniciar o objeto do express */
 var app = express();
-
 /*Rotas para login com facebook*/
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
 
@@ -61,6 +60,8 @@ function usuarioAutenticado(req, res, next) {
 		return next();
 	res.redirect('/login')
 }
+
+
 
 /* setar as variáveis 'view engine' e 'views' do express */
 app.set('view engine', 'ejs');

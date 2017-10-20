@@ -15,6 +15,8 @@
     "express": "^4.14.0",
     "express-session": "^1.15.6",
     "express-validator": "^2.20.8",
+    "geohash": "0.0.1",
+    "googlemaps": "^1.12.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1"
   }
