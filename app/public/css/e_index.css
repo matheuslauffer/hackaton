@@ -1,0 +1,49 @@
+body{
+	/*background-color: red;*/
+}
+
+div.principal_css{
+	background-color: blue;
+}
+/*
+div.conteudo{
+	padding: 10px;
+}
+*/
+div.mapa_css{
+	background-color: green;
+}
+
+div.menu_css{
+	background-color: gray;
+}
+
+div.pedidos_css{
+	background-color: yellow;
+}
+
+img.home{
+	display: block;
+	margin: auto;
+}
+
+p.link_page{
+	text-align: center;
+	font-size: 20px;
+	color: black;
+}
+
+span{
+	font-size: 18px;
+	color: white;
+}
+
+span.centro{
+	text-align: center;
+	display: block;
+}
+
+span.entre{
+	font-size: 20px;
+	color: yellow;
+}
