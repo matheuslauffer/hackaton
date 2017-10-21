@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/e_index.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMhibe845_crh_ZqrPRG9-j2bH0XAXDXs&callback=initMap" async defer></script>
 </head>
 <body>
@@ -76,31 +77,38 @@
 				</div>
 			</div>
 
-
 		</div>
 	</div>
 	<script>
+	function addMarker(location, map, type){
+		var image;
+		if(type == 0)
+			image = "./images/marcadorverde.png";
+		else {
+			image = "./images/marcadorpink.png";
+		}
+		var marker = new google.maps.Marker({position: location, map: map, icon: image});
+	}
+
 	function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 10
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
-						var marker = new google.maps.Marker({
-			    		position: pos,
-			    		map: map,
-			    		title: 'Hello World!'
-			  		});
-            map.setCenter(pos);
+						map.setCenter(pos);
+						addMarker(pos, map, 0);
+						// 	var pos = {
+	          //     lat: solicitacoes[i].localizacao.latitude,
+	          //     lng: solicitacoes[i].localizacao.longitude
+						// }
+						//addMarker(pos, map, 1);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -117,5 +125,9 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
   </script>
+
+	<%for(var i=0; i< solicitacoes.length; i++){%>
+		<%= console.log(solicitacoes[i]);%>
+	<%}%>
 </body>
 </html>

@@ -10,6 +10,8 @@ var bodyParser = require('body-parser');
 /* importar o módulo do express-validator */
 var expressValidator = require('express-validator');
 
+var expressSession = require('express-session');
+
 /*iniciar o módulo passport*/
 var passport = require('passport');
 
@@ -78,6 +80,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 /* configurar o middleware express-validator */
 app.use(expressValidator());
 
+app.use(expressSession({
+	secret:'idjaoiskdok',
+	resave: false,
+	saveUninitialized: false
+}));
+
 /*inicializar passport e session*/
 app.use(passport.initialize());
 app.use(passport.session());
@@ -86,6 +94,7 @@ consign()
 	.include('app/routes')
 	.then('app/models')
 	.then('app/controllers')
+  .then('config/dbConnection.js')
 	.into(app);
 
 /* exportar o objeto app */

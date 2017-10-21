@@ -11,12 +11,15 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "consign": "^0.1.2",
+    "crypto": "^1.0.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "express-session": "^1.15.6",
     "express-validator": "^2.20.8",
     "geohash": "0.0.1",
     "googlemaps": "^1.12.0",
+    "mongo": "^0.1.0",
+    "mongod": "^2.0.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1"
   }
