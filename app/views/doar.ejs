@@ -5,12 +5,12 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet" >
-	
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/e_index.css"/>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMhibe845_crh_ZqrPRG9-j2bH0XAXDXs&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcjTqsaEAW1ebA_5lPBC2DlCvRXGFmtzY&callback=initMap" async defer></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	
+
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -25,7 +25,7 @@
 	});
 	</script>
 
-	
+
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-42119746-1']);
@@ -39,7 +39,7 @@
     </script>
 </head>
 <body>
-	<div class="container header"> 
+	<div class="container header">
 		<img src="images/peoples_help.png" alt="People's Help" height="15%" width="15%">
 	</div>
 	<div class="container principal_css">
@@ -51,9 +51,9 @@
 			<div class="col-md-2 login_css">
 				<div class= "social_network">
 					<a class="btn btn-social-icon btn-lg btn-facebook" href="/auth/facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
-					<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google"></span></a>  
+					<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google"></span></a>
 					<a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
-				</div>	
+				</div>
 				<br>
 					<form class="form-horizontal" method="post" action="#">
 						<div class="form-group">
@@ -96,7 +96,7 @@
 						</a>
 						<a href="info.html">
 							<p class="link_page">
-								<img src="images/information_icon.png" alt="Informações" title="Informações" width="27.5%" height="5%" class="home">
+								<img src="images/information_icon.png" alt="Informaï¿½ï¿½es" title="Informaï¿½ï¿½es" width="27.5%" height="5%" class="home">
 							</p>
 						</a>
 						<a href="doar.html">
@@ -109,19 +109,19 @@
 								<div class="texto_doacao">
 									O que voce poderia doar?
 								</div>
-							<select name="doacao" id="doacao" style="width=2000px;height=400px;">									
-								<option value="alimentos" selected>Alimentos</option>      
-								<option value="materiais_contrucao">Material de Construcao</option>     
-								<option value="roupas">Roupas</option>                     
-								<option value="outro">Outros</option>                      
-							</select>                                                                                                     
-							<div class="escondido" id="escondido">                                                                        
-								                                                                                                          
-							</div>                                                                                                        
-				
+							<select name="doacao" id="doacao" style="width=2000px;height=400px;">
+								<option value="alimentos" selected>Alimentos</option>
+								<option value="materiais_contrucao">Material de Construcao</option>
+								<option value="roupas">Roupas</option>
+								<option value="outro">Outros</option>
+							</select>
+							<div class="escondido" id="escondido">
+
+							</div>
+
 							</div>
 						</div>
-						
+
 						<a href="solicitar.html">
 							<p class="link_page">
 								<img src="images/receive_icon.png" alt="Receber" title="Receberr" width="27.5%" height="5%" class="home">
@@ -141,7 +141,7 @@
 			zoom: 10
 		});
 		var infoWindow = new google.maps.InfoWindow({map: map});
-	
+
 		// Try HTML5 geolocation.
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -149,7 +149,7 @@
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
 			};
-	
+
 						var marker = new google.maps.Marker({
 						position: pos,
 						map: map,
@@ -164,7 +164,7 @@
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
 		}
-	
+
 		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 		infoWindow.setPosition(pos);
 		infoWindow.setContent(browserHasGeolocation ?
@@ -175,10 +175,10 @@
 	<script type="text/javascript">
 
 		/*function verificarCheckBox(check) {
-		 
 
-		    for (var i=0;i<check.length;i++){ 
-		        if (check[i].checked == true){ 
+
+		    for (var i=0;i<check.length;i++){
+		        if (check[i].checked == true){
 		            var botao = document.createElement("input");
 					botao.type = "button";
 					botao.id = "botao";
@@ -186,7 +186,7 @@
 					escondido.appendChild(botao);
 					i = check.length;
 		        }else{
-		           
+
 		        }
 		   	}
 		}*/
@@ -213,7 +213,7 @@
 						newCheckbox.name = "box";
 						newCheckbox.value = alimentos[i] + "<br>";
 						td1.appendChild(newCheckbox);
-						
+
 						var label = document.createElement('label');
 						label.htmlFor = "id";
 						label.appendChild(document.createTextNode(alimentos[i]));
@@ -245,7 +245,7 @@
 						newCheckbox.id = "_" + materiais_contrucao[i];
 						newCheckbox.value = materiais_contrucao[i] + "<br>";
 						td1.appendChild(newCheckbox);
-						
+
 						var label = document.createElement('label');
 						label.htmlFor = "id";
 						label.appendChild(document.createTextNode(materiais_contrucao[i]));
@@ -274,7 +274,7 @@
 						newCheckbox.id = "_" + roupas[i];
 						newCheckbox.value = roupas[i] + "<br>";
 						td1.appendChild(newCheckbox);
-						
+
 						var label = document.createElement('label');
 						label.htmlFor = "id";
 						label.appendChild(document.createTextNode(roupas[i]));
@@ -305,7 +305,7 @@
 						newCheckbox.value = outro[i];
 						escondido.appendChild(newCheckbox);
 						document.innerHTML += "<br>";
-						
+
 						var botao = document.createElement("input");
 						botao.type = "button";
 						botao.id = "botao";
@@ -315,7 +315,7 @@
 					break;
 			}
 		});
-		
+
 	</script>
   <script src="assets/js/jquery.js"></script>
 </body>
