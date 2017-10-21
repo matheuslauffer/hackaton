@@ -6,10 +6,10 @@
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet" >
 	<meta charset="utf-8">
-	<!-- <script src="js/jquery.js"></script> -->
+	<script src="js/jquery.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/e_index.css"/>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxho4EwzG9Y8_LoWtiH3YJ8itC9Q_2DtY&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNgM40ywladoIXRQSbjVEeN4-9KzAhRVg&callback=initMap" async defer></script>
 
 	<link rel="stylesheet" type="text/css" href="css/e_cadastro.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -68,16 +68,16 @@
 	</div>
 
 	<div class="container principal_css">
-		<%if(validacao.erros > 0){%>
+		<!-- <%if(validacao > 0){%>
 			<div class="alert alert-danger" id="alerta">
 				<strong>Atenção!<br /> Login e/ou senha inválido(s)</strong>
 			</div>
 		<%}%>
-		<%if(validacao.cadastro == 0){%>
+		<%if(validacao == 0){%>
 			<div class="alert alert-info" id="alerta">
 				<strong>Usuário cadstrado com sucesso</strong>
 			</div>
-		<%}%>
+		<%}%> -->
 		<div class="row" class="conteudo">
 			<div class="col-md-10 mapa_css" id="map">
 
@@ -85,7 +85,9 @@
 
 			<div class="col-md-2 login_css">
 				<div class= "social_network">
-					<a class="btn btn-social-icon btn-lg btn-facebook" href="/auth/facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
+					<a class="btn btn-social-icon btn-lg btn-facebook" href="#" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><fb:login-button
+     scope="email,publish_actions" onlogin="checkLoginState();">
+</fb:login-button></a>
 					<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google"></span></a>
 					<a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
 				</div>
@@ -150,6 +152,30 @@
 
 		</div>
 	</div>
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+			<!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog" class="escondido">
+	    <div class="modal-dialog modal-sm">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Modal Header</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>This is a small modal.</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+    </div>
+  </div>
 	<script>
 	function addMarker(location, map, type){
 		var image;
@@ -178,77 +204,7 @@
             };
 
 					map.setCenter(pos);
-					addMarker(pos, map, 0);
-					var pos = {
-						lat: position.coords.latitude+0.01,
-						lng: position.coords.longitude+0.001
-					};
-					var image = "./images/marcadorvermelho.png";
-					var marker1 = new google.maps.Marker({position: pos, map: map, icon: image});
-					var infowindow = new google.maps.InfoWindow(), marker1;
-
-					google.maps.event.addListener(marker1, 'click', (function(marker1, i) {
-					    return function() {
-					        infowindow.setContent("Nome: Paulo Junior Silva Souza.<br>Precisa: Alimentos e roupas.<br>Telefone:(51)99877-6655.");
-					        infowindow.open(map, marker1);
-					    }
-					})(marker1))
-					var pos = {
-						lat: position.coords.latitude+0.02,
-						lng: position.coords.longitude-0.0001
-					};
-					var image = "./images/marcadorvermelho.png";
-					var marker2 = new google.maps.Marker({position: pos, map: map, icon: image});
-					var infowindow = new google.maps.InfoWindow(), marker2;
-
-					google.maps.event.addListener(marker2, 'click', (function(marker2, i) {
-					    return function() {
-					        infowindow.setContent("Nome: Paulo ricardo Gomes.<br>Precisa: Alimentos e roupas.<br>Telefone:(51)98077-6655.");
-					        infowindow.open(map, marker2);
-					    }
-					})(marker2))
-					var pos = {
-						lat: position.coords.latitude+0.03,
-						lng: position.coords.longitude-0.0001
-					};
-					var image = "./images/marcadorvermelho.png";
-					var marker3 = new google.maps.Marker({position: pos, map: map, icon: image});
-					var infowindow = new google.maps.InfoWindow(), marker3;
-
-					google.maps.event.addListener(marker3, 'click', (function(marker3, i) {
-					    return function() {
-					        infowindow.setContent("Nome: Carlos da Silva.<br>Precisa: Alimentos, roupas e telhas.<br>Telefone:(51)99555-6755.");
-					        infowindow.open(map, marker3);
-					    }
-					})(marker3))
-					var pos = {
-						lat: position.coords.latitude-0.01,
-						lng: position.coords.longitude+0.001
-					};
-					var image = "./images/marcadorvermelho.png";
-					var marker4 = new google.maps.Marker({position: pos, map: map, icon: image});
-					var infowindow = new google.maps.InfoWindow(), marker4;
-
-					google.maps.event.addListener(marker4, 'click', (function(marker4, i) {
-					    return function() {
-					        infowindow.setContent("Nome: Paulo Souza Pereira.<br>Precisa: Telhas e alimentos.<br>Telefone:(51)99557-6655.");
-					        infowindow.open(map, marker4);
-					    }
-					})(marker4))
-					var pos = {
-						lat: position.coords.latitude+0.005,
-						lng: position.coords.longitude-0.01
-					};
-					var image = "./images/marcadorvermelho.png";
-					var marker5 = new google.maps.Marker({position: pos, map: map, icon: image});
-					var infowindow = new google.maps.InfoWindow(), marker5;
-
-					google.maps.event.addListener(marker5, 'click', (function(marker5, i) {
-					    return function() {
-					        infowindow.setContent("Nome: Juliano Silva Silva.<br>Precisa: Alimentos e telhas.<br>Telefone:(51)99887-6555.");
-					        infowindow.open(map, marker5);
-					    }
-					})(marker5))
+					addMarker(pos, map, 1);
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
