@@ -194,7 +194,7 @@
 					    }
 					})(marker1))
 					var pos = {
-						lat: position.coords.latitude+0.02,
+						lat: position.coords.latitude-0.02,
 						lng: position.coords.longitude-0.0001
 					};
 					var image = "./images/marcadorvermelho.png";
@@ -203,7 +203,7 @@
 
 					google.maps.event.addListener(marker2, 'click', (function(marker2, i) {
 					    return function() {
-					        infowindow.setContent("Nome: Paulo ricardo Gomes.<br>Precisa: Alimentos e roupas.<br>Telefone:(51)98077-6655.");
+					        infowindow.setContent("Nome: Paulo Ricardo Gomes.<br>Precisa: Alimentos e roupas.<br>Telefone:(51)98077-6655.");
 					        infowindow.open(map, marker2);
 					    }
 					})(marker2))
