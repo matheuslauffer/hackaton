@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
 var expressSession = require('express-session');
-
+var session = require('session');
 /*iniciar o módulo passport*/
 var passport = require('passport');
 
@@ -82,9 +82,15 @@ app.use(expressValidator());
 
 app.use(expressSession({
 	secret:'idjaoiskdok',
-	resave: false,
-	saveUninitialized: false
+	resave: true,
+	saveUninitialized: true
 }));
+
+// app.use(session({
+//     secret: '2C44-4D44-WppQ38S',
+//     resave: true,
+//     saveUninitialized: true
+// }));
 
 /*inicializar passport e session*/
 app.use(passport.initialize());

@@ -1,14 +1,38 @@
 <html>
 <head>
-	<title>Colaboration</title>
+	<title>People's Help - Home</title>
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet" >
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/e_index.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMhibe845_crh_ZqrPRG9-j2bH0XAXDXs&callback=initMap" async defer></script>
+
+	<link rel="stylesheet" type="text/css" href="css/e_cadastro.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+	
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42119746-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 </head>
 <body>
-
+	<div class="container header"> 
+		<img src="images/peoples_help.png" alt="People's Help" height="15%" width="15%">
+	</div>
 	<div class="container principal_css">
 		<div class="row" class="conteudo">
 			<div class="col-md-10 mapa_css" id="map">
@@ -16,95 +40,95 @@
 			</div>
 
 			<div class="col-md-2 login_css">
-				<a class="btn btn-lg btn-primary col-md-8" href="/auth/facebook" role="button" >
-					<img src="images/face.png" alt="Logo do Facebook" title="Logar com o Facebook" width="50%" height="5%" class="face">
+				<div class= "social_network">
+					<a class="btn btn-social-icon btn-lg btn-facebook" href="/auth/facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
+					<a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google"></span></a>  
+					<a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
+				</div>	
+				<br>
+					<form class="form-horizontal" method="post" action="#">
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Login</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Digite um login"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Senha</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Digite sua senha"/>
+								</div>
+							</div>
+						</div>
+					</form>
+				<a href="login.ejs">
+					<div class="form-group ">
+						<button type="button" class="btn btn-primary btn-lg btn-block login-button">Enter</button>
+					</div>
+				</a>
+				<span class="centro">ou<br></span>
+				<a href="cadastro.ejs">
+					<div class="form-group ">
+						<button type="button" class="btn btn-primary btn-lg btn-block login-button">Cadastre-se</button>
+					</div>
 				</a>
 				<br>
-				<span class="log">Login:</span>
-					<input type="text" name="Login" placeholder="Digite o seu login">
-
-				<span class="pass">Senha:</span>
-					<input type="password" name="Senha" placeholder="Digite a sua senha">
-
-				<a href="">
-					<span class="entre centro">Entre<br>
-					</span>
-				</a>
-
-					<span class="centro">ou<br></span>
-				<a href="">
-					<span class="entre centro">Cadastre-se!<br></span>
-				</a>
-
 				<div class="row">
 					<div class="col-md-12 menu_css">
 						<a href="index.ejs">
 							<p>
-								<img src="images/home.png" alt="Ícone da página Home" title="Home" width="40%" height="10%" class="home">
+								<img src="images/home.png" alt="Home Page" title="Home" width="27.5%" height="5%" class="home">
 							</p>
 						</a>
 						<a href="info.ejs">
 							<p class="link_page">
-								INFORMAÇÕES
+								<img src="images/information_icon.png" alt="Informações" title="Informações" width="27.5%" height="5%" class="home">
 							</p>
 						</a>
 						<a href="doar.ejs">
 							<p class="link_page">
-								DOAR
+								<img src="images/donate_icon.png" alt="Doar" title="Doar" width="27.5%" height="5%" class="home">
 							</p>
 						</a>
 						<a href="solicitar.ejs">
 							<p class="link_page">
-								SOLICITAR
+								<img src="images/receive_icon.png" alt="Receber" title="Receberr" width="27.5%" height="5%" class="home">
 							</p>
 						</a>
-
-						<div class="row">
-							<div class="col-md-12 pedidos_css">
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-								<p>Pedidos aqui</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
 
+
 		</div>
 	</div>
 	<script>
-	function addMarker(location, map, type){
-		var image;
-		if(type == 0)
-			image = "./images/marcadorverde.png";
-		else {
-			image = "./images/marcadorpink.png";
-		}
-		var marker = new google.maps.Marker({position: location, map: map, icon: image});
-	}
-
 	function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 10
         });
-				//console.log(solicitacoes);
         var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-						map.setCenter(pos);
-						addMarker(pos, map, 0);
+
+						var marker = new google.maps.Marker({
+			    		position: pos,
+			    		map: map,
+			    		title: 'Hello World!'
+			  		});
+            map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -121,5 +145,6 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
   </script>
+  <script src="assets/js/jquery.js"></script>
 </body>
 </html>

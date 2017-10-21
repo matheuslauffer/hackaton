@@ -1,15 +1,36 @@
 body{
-	/*background-color: red;*/
+	background-color: #98FB98;
+}
+
+div.header{
+	text-align: center;
+	margin-top: 4%;
+
 }
 
 div.principal_css{
-	
+	background-color: #7FFFD4;
 }
 /*
 div.conteudo{
 	padding: 10px;
 }
 */
+
+div.login_css{
+	border-width: 2px;
+	border-color: black black black #7FFFD4;
+	border-style: solid;
+}
+
+span.input-group-addon{
+	width: 20%;
+}
+
+div.social_network{
+	margin-top: 10%;
+}
+
 div.mapa_css{
 	border-width: 2px;
 	border-color: black;
@@ -17,11 +38,16 @@ div.mapa_css{
 }
 
 div.menu_css{
-	background-color: gray;
+	/*border-width: 2px;
+	border-color: black;
+	border-style: solid;*/
 }
 
 div.pedidos_css{
-	background-color: yellow;
+	/*background-color: yellow;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;*/
 }
 
 img.home{
@@ -48,17 +74,22 @@ span{
 	color: white;
 }
 
+span.log{
+	color: black;
+}
+
 span.centro{
 	text-align: center;
 	display: block;
+	margin-top: -10%;
 }
 
 span.entre{
 	font-size: 20px;
-	color: yellow;
+	color: purple;
 }
 
 input{
 	position: relative;
-	margin-left: -5.5%;
+	margin-left: -7%;
 }

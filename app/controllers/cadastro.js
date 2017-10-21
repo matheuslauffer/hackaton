@@ -1,5 +1,5 @@
 module.exports.cadastro = function(application, req, res){
-  res.send('renderizar página de cadastro');
+  res.render('cadastro');
 }
 
 // module.exports.cadastrar = function(application, req, res){

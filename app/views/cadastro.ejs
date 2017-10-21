@@ -1,0 +1,141 @@
+<html>
+    <head>
+		<title>Cadastro</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/e_cadastro.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+		<script language="JavaScript" type="text/javascript" src="js/MascaraValidacao.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Formulário de cadastro</h1>
+	               		<hr />
+	               	</div>
+					<div class="logo_cadastro">
+						<img src="images/peoples_help.png" alt="People's Help">
+					</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="#" name="form1" onsubmit="return validarSenha(this);">
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Nome</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input required type="text" class="form-control" name="name" id="name"  placeholder="Digite seu nome"/>
+								</div>
+							</div>
+						</div>
+
+            <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Telefone</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input required type="text" class="form-control"  name="tel" onKeyPress="MascaraTelefone(form1.tel);" maxlength="15"  onBlur="ValidaTelefone(form1.tel);" id="telefone"  placeholder="Digite seu telefone"/>
+								</div>
+							</div>
+						</div>
+
+            <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Data de nascimento</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input required type="date" class="form-control" name="data" id="dataDeNascimento"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input required type="email" class="form-control" name="email" onblur="validacaoEmail(f1.email)"  maxlength="60" id="email"  placeholder="Digite seu email"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Login</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input required type="text" class="form-control" name="username" id="username"  placeholder="Digite um login"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Senha</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input required type="password" class="form-control" name="password" id="password"  placeholder="Digite sua senha"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirme sua senha</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input required type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirme sua senha"/>
+                  <script>var password = document.getElementById("password")
+                    , confirm_password = document.getElementById("confirm");
+
+                  function validatePassword(){
+                    if(password.value != confirm_password.value) {
+                      confirm_password.setCustomValidity("Senhas diferentes!");
+                    } else {
+                      confirm_password.setCustomValidity('');
+                    }
+                  }
+
+                  password.onchange = validatePassword;
+                  confirm_password.onkeyup = validatePassword;</script>
+                </div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="cpf" class="cols-sm-2 control-label">CPF</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input required type="text" name="cpf" onBlur="validaCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" class="form-control" placeholder="Digite o seu CPF"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Cadastrar</button>
+						</div>
+						<div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
