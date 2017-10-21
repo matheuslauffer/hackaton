@@ -10,5 +10,5 @@ module.exports.cadastrar = function(application, req, res){
   //var SolicitacoesDAO = new application.app.models.SolicitacoesDAO(connection);
 
   UsuariosDAO.inserirUsuario(dadosForm);
-  res.redirect("index");
+  res.render("index", {validacao: {}});
 }

@@ -36,16 +36,16 @@
 	</div>
 
 	<div class="container principal_css">
-		<%if(validacao.erros > 0){%>
+		<!-- <%if(validacao > 0){%>
 			<div class="alert alert-danger" id="alerta">
 				<strong>Atenção!<br /> Login e/ou senha inválido(s)</strong>
 			</div>
 		<%}%>
-		<%if(validacao.cadastro == 0){%>
+		<%if(validacao == 0){%>
 			<div class="alert alert-info" id="alerta">
 				<strong>Usuário cadstrado com sucesso</strong>
 			</div>
-		<%}%>
+		<%}%> -->
 		<div class="row" class="conteudo">
 			<div class="col-md-10 mapa_css" id="map">
 
@@ -118,6 +118,30 @@
 
 		</div>
 	</div>
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+			<!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog" class="escondido">
+	    <div class="modal-dialog modal-sm">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Modal Header</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p>This is a small modal.</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+    </div>
+  </div>
 	<script>
 	function addMarker(location, map, type){
 		var image;

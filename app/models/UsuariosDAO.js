@@ -23,10 +23,10 @@ UsuariosDAO.prototype.autenticar = function (usuario, req, res) {
         }
         var erros = 0;
         if(req.session.autorizado){
-          res.render("index",{validacao: {erros}});
+          res.render("index", {validacao: {erros}});
         }else{
           erros = 1;
-          res.render("index", {validacao: {erros}});
+          res.render("index",{validacao: {erros}});
         }
       });
       mongoclient.close()

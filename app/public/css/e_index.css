@@ -88,7 +88,9 @@ span.entre{
 	font-size: 20px;
 	color: purple;
 }
-
+.escondido{
+	display: hidden;
+}
 input{
 	position: relative;
 	margin-left: -7%;
