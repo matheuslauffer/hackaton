@@ -17,19 +17,16 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario) {
 UsuariosDAO.prototype.autenticar = function (usuario, req, res) {
   this._connection.open(function(err, mongoclient){
     mongoclient.collection("usuarios", function(err, collection){
-      //var senha_criptografada = crypto.createHash("md5").update(usuario.senha).digest("hex");
-      //usuario.senha = senha_criptografada;
-      usuario = {nome: "Thales"};
       collection.find(usuario).toArray(function(err, result){
         if(result[0] != undefined){
           req.session.autorizado = true;
         }
-
+        var erros = 0;
         if(req.session.autorizado){
-          res.redirect("index");
+          res.render("index",{validacao: {erros}});
         }else{
-          var erros = 1;
-          res.render("index", {validacao: {erros}, dadosForm: {}});
+          erros = 1;
+          res.render("index", {validacao: {erros}});
         }
       });
       mongoclient.close()
