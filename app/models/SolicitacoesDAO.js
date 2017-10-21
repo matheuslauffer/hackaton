@@ -7,7 +7,7 @@ SolicitacoesDAO.prototype.pegarSolicitacoes = function(req, res) {
       //var senha_criptografada = crypto.createHash("md5").update(usuario.senha).digest("hex");
       //usuario.senha = senha_criptografada;
       collection.find().toArray(function(err, result){
-        res.render("index", {solicitacoes: result});
+        res.render("index", {solicitacoes: result[0]});
         mongoclient.close();
       });
     });

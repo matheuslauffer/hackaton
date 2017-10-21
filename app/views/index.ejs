@@ -95,6 +95,7 @@
           center: {lat: -34.397, lng: 150.644},
           zoom: 10
         });
+				//console.log(solicitacoes);
         var infoWindow = new google.maps.InfoWindow({map: map});
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -104,11 +105,6 @@
             };
 						map.setCenter(pos);
 						addMarker(pos, map, 0);
-						// 	var pos = {
-	          //     lat: solicitacoes[i].localizacao.latitude,
-	          //     lng: solicitacoes[i].localizacao.longitude
-						// }
-						//addMarker(pos, map, 1);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -125,9 +121,5 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
   </script>
-
-	<%for(var i=0; i< solicitacoes.length; i++){%>
-		<%= console.log(solicitacoes[i]);%>
-	<%}%>
 </body>
 </html>
